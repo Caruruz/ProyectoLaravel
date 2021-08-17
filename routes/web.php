@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\EmpleadoController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/agregar', [App\Http\Controllers\EmpleadoController::class, 'create'])->name('agregar');
+Route::resource('empleados','App\Http\Controllers\EmpleadoController');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Carrusel', [App\Http\Controllers\CarruselController::class, 'index'])->name('Carrusel');
+
